@@ -1,0 +1,63 @@
+btnSize(horizontalPadding,height,fontSize)
+  padding 0 horizontalPadding
+  height height
+  line-height height - 2
+  font-size fontSize
+btnColor(fontColor,bgColor,borderColor=bgColor)
+  color fontColor
+  background-color bgColor
+  border solid 1px borderColor
+  &:active
+    background-color darken(bgColor,20%)
+    border-color darken(borderColor,20%)
+  &:hover
+    color fontColor
+[ai-btn]
+  -webkit-appearance none
+  appearance none
+  box-sizing border-box
+  white-space nowrap
+  display inline-block
+  width 100%
+  text-align center
+  cursor pointer
+  border-radius 20px
+  btnSize(15px,38px,$fontSize)
+  btnColor($secondary,$primary,$secondary)
+  &[ai-btn~='pierced']
+    btnColor($primary,rgba(255,255,255,0),$primary)
+  &:disabled
+    btnColor(white,$gray)
+    cursor not-allowed
+  &[ai-btn~='round']
+    border-radius 20px
+[ai-btn~='sm']
+  btnSize(10px,32px,1.4rem)
+  &[ai-btn~='round']
+    border-radius 17px
+[ai-btn~='xs']
+  btnSize(10px,28px,1.4rem)
+  &[ai-btn~='round']
+    border-radius 15px
+[ai-btn~='lg']
+  btnSize(20px,50px,1.8rem)
+[ai-btn~='xl']
+  btnSize(20px,50px,2rem)
+[ai-btn~='auto']
+  width auto
+[ai-btn~='transparent']
+  btnColor($plain,transparent)
+[ai-btn~='info']
+  btnColor(white,$info)
+[ai-btn~='warning']
+  btnColor(white,$warning)
+[ai-btn~='danger']
+  btnColor(white,$danger)
+[ai-btn~='success']
+  btnColor(white,$success)
+[ai-btn~='white']
+  btnColor($gray,white,$grayLight)
+[ai-btn~='gray']
+  btnColor($grayDark,$grayLight,$gray)
+  &[ai-btn~='pierced']
+    btnColor($grayDark,rgba(255,255,255,0),$gray)
