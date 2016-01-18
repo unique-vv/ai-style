@@ -1,0 +1,14 @@
+[ai-valign]
+  font-size 0
+  &:before
+    content ''
+    display inline-block
+    height 100%
+  >*
+    display inline-block
+    font-size $fontSize
+[ai-valign~='middle']
+  &:before
+    vertical-align middle
+  >*
+    vertical-align middle

@@ -1,0 +1,61 @@
+iptSize(padding,height,fontSize=$fontSize)
+  padding-left padding
+  padding-right padding
+  height height
+  font-size fontSize
+  &[type*='date']
+    height auto
+    line-height height
+[ai-ipt]
+  -webkit-appearance none
+  appearance none
+  display inline-block
+  box-sizing border-box
+  border solid 1px $grayLight
+  background-color white
+  border-radius $borderRadius
+  margin 0
+  iptSize(10px,40px)
+  width 100%
+  vertical-align middle
+  &:hover
+    box-shadow 0 0 3px $primary
+  &[type='radio']
+    border-radius 50%
+    padding 0
+    width 25px
+    height 25px
+    outline none
+    &:checked
+      background url(../assets/images/radio-checked.png) no-repeat 50% 50%
+      background-size 100% 100%
+      border-color $grayLightest
+    &:hover
+      box-shadow none
+  &[type='checkbox']
+    border-radius 4px
+    padding 0
+    width 25px
+    height 25px
+    outline none
+    &:checked
+      background $primary url(../images/checkbox-checked.png) no-repeat 50% 50%
+[ai-ipt~='noEvent']
+  pointer-events none
+[ai-ipt~='transparent']
+  border-color transparent
+  background transparent
+[ai-ipt~='noPadding']
+  padding-left 0
+  padding-right 0
+[ai-ipt~='sm']
+  height 32px
+  font-size 1.4rem
+[ai-ipt~='lg']
+  height 50px
+  font-size 1.8rem
+[ai-ipt~='auto']
+  width auto
+textarea[ai-ipt]
+  height auto
+  padding 8px 8px
